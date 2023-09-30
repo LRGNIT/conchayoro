@@ -1,9 +1,9 @@
 name: conchayoro-pipeline
 
 on:
-
+#  workflow_dispatch:
    push:
-    branches: [ main ]
+     branches: [ main ]
    
 jobs:
   build:
@@ -40,4 +40,4 @@ jobs:
         name: build
         path: frontend/.next/server/app
     - run: aws s3 cp frontend/.next/server/app s3://$BUCKET_S3 --recursive --acl public-read
-  
+    
