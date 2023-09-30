@@ -38,6 +38,6 @@ jobs:
     - uses: actions/download-artifact@v3
       with:
         name: build
-        path: frontend/.next/server/app
+        path: frontend/src/app
     - run: aws s3 cp frontend/src/app s3://$BUCKET_S3 --recursive --acl public-read
     
